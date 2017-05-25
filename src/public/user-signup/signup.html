@@ -1,0 +1,38 @@
+<div class="container">
+  <h2 id="menu-categories-title" class="text-center">Sign up for the newsletter</h2>
+
+  <form name="credentialsForm" class="col-sm-5" novalidate>
+    First Name:<br>
+    <input type='text' name="firstName" ng-model="signUpCtrl.first_name" required>
+    <span ng-if="credentialsForm.firstName.$error.required && credentialsForm.firstName.$touched"> First Name is required </span>
+    <br>
+
+    Last Name:<br>
+     <input type='text' name="lastName" ng-model="signUpCtrl.last_name" required>
+     <span ng-if="credentialsForm.lastName.$error.required && credentialsForm.lastName.$touched"> Last Name is required </span>
+     <br>
+
+    EMail Address:<br>
+     <input type='email' name="email" ng-model="signUpCtrl.email" required>
+     <span ng-if="credentialsForm.email.$error.required && credentialsForm.email.$touched"> EMail Address is required </span>
+     <br>
+
+    Phone Number:<br>
+     <input type='text' name="phone" ng-model="signUpCtrl.phone" required placeholder="#/#" pattern="(\d*)/(\d*)">
+     <span ng-if="credentialsForm.phone.$error.required && credentialsForm.phone.$touched"> Phone Number is required </span>
+     <br>
+
+    Favourite Dish (Short Number):<br>
+    <input type='text' name="favDish" ng-model="signUpCtrl.favDish" required>
+    <span ng-if="signUpCtrl.searchPerformed && !signUpCtrl.searchSuccess"> No such menu number exists </span>
+    <br>
+
+<br>
+    <button ng-click="signUpCtrl.signUp()" ng-disabled="credentialsForm.$invalid"> Sign Up </button>
+  </form>
+
+<br>
+<h2 ng-if="signUpCtrl.searchSuccess"> Your information has been saved </h2>
+
+
+</div>
